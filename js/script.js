@@ -1,14 +1,13 @@
 //En este array de strings, tenemos todos los colores
 const colors = [ 'red', 'green', 'blue', 'yellow', 'pink', 'purple' ];
 
-randomColor = () => {
-    let randomIndex = Math.floor(Math.random() * (colors.length));
-    return colors[ randomIndex ];
+randomIndex = (array) => {
+    return array[ Math.floor(Math.random() * (array.length)) ];
 };
 
-let button = document.querySelector('button');
+let button = document.querySelector('#button');
 let bodyColor = document.querySelector('body');
 
-button.addEventListener('click', (event) => {
-    bodyColor.style.backgroundColor = randomColor();
+button.addEventListener('click', () => {
+    bodyColor.style.backgroundColor = randomIndex(colors);
 });
